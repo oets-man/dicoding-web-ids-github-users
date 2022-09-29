@@ -1,4 +1,4 @@
-// import { async } from "regenerator-runtime";
+import { async } from "regenerator-runtime";
 // import clubs from "./clubs.js";
 
 class DataSource {

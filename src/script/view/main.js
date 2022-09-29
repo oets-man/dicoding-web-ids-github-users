@@ -28,7 +28,7 @@ const main = () => {
   //auto jalan
   window.addEventListener("load", async () => {
     try {
-      const results = await DataSource.searchClub("a");
+      const results = await DataSource.searchClub("dara");
       // console.log(results);
       renderResult(results);
     } catch (fail) {

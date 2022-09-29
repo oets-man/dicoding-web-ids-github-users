@@ -1,3 +1,4 @@
+import updateTime from "./clock.js";
 class AppBar extends HTMLElement {
   constructor() {
     super();
@@ -26,18 +27,39 @@ class AppBar extends HTMLElement {
       background-color: cornflowerblue;
       color: white;
       box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      overflow:auto;
     }
     h2 {
       padding: 16px;
-      display: inline-block;
+      float:left;
     }
-    p {
-      margin-top:12px;
-      float: right;
+
+    .clock {
+      float:right;
+      width: fit-content;
+      padding: 10px 10px 0 0;
+      color: white;
+      font-family: sans-serif;
+      display: flex;
+      flex-direction: column;
+      text-align:end;
     }
+  
+    .clock .time {
+      font-size: 1em;
+    }
+  
+    .clock .date {
+      font-size: 1em;
+    } 
   </style>
-      <h2>Cari User GitHub</h2>
+    <h2>Cari User GitHub</h2>
+    <div class="clock">
+      <span class="time">dummy</span>
+      <span class="date">dummy</span>
+    </div>
     `;
+    updateTime();
   }
 }
 customElements.define("app-bar", AppBar);

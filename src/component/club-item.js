@@ -35,6 +35,9 @@ class ClubItem extends HTMLElement {
         float: left;
         margin-right: 10px;
       }
+      a:hover{
+        font-style:italic;
+      }
       tr > :first-child {
         font-style: italic;
         padding-right: 0.25em;
