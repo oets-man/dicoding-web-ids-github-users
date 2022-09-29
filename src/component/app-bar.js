@@ -29,9 +29,14 @@ class AppBar extends HTMLElement {
     }
     h2 {
       padding: 16px;
+      display: inline-block;
+    }
+    p {
+      margin-top:12px;
+      float: right;
     }
   </style>
-      <h2>Club Finder</h2>
+      <h2>Cari User GitHub</h2>
     `;
   }
 }

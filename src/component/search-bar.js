@@ -73,7 +73,7 @@ class SearchBar extends HTMLElement {
 
         <div id="search-container" class="search-container">
         <input
-          placeholder="Search football club"
+          placeholder="Cari berdasarkan username"
           id="searchElement"
           type="search"
         />

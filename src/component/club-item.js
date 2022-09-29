@@ -46,27 +46,27 @@ class ClubItem extends HTMLElement {
 
       <div class="item">
         <img
-          src=""
+          src="${this._club.avatar_url}"
           alt="user avatar"
         />
         <table>
           <tr>
             <td>login:</td>
             <td>
-              <a target="_blank" href="https://github.com/oets-man">${this._club.login}</a>
+              <a target="_blank" href="${this._club.html_url}">${this._club.login}</a>
             </td>
           </tr>
           <tr>
             <td>nama:</td>
-            <td>usman</td>
+            <td>-</td>
           </tr>
           <tr>
             <td>email:</td>
-            <td>oets@ma.com</td>
+            <td>-</td>
           </tr>
           <tr>
             <td>lokasi:</td>
-            <td>Bangkalan</td>
+            <td>-</td>
           </tr>
         </table>
       </div>
