@@ -11,48 +11,66 @@ class ClubItem extends HTMLElement {
     this.shadow.innerHTML = `
       <style>
       * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+        box-sizing: border-boxs;
+        margin: 0;
+        padding: 0;
       }
-      :host {
-        display: block;
-        margin-bottom: 18px;
+      .item {
+        text-align: left;
+        background-color: azure;
+        width: 300px;
+        margin: 10px 10px;
+        overflow: auto;
+        padding: 10px;
+        display: inline-block;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-        border-radius: 10px;
-        overflow: hidden;
+        transition: 0.3s;
+        border-radius: 5px;
       }
-      
-      .fan-art-club {
-        width: 100%;
-        max-height: 300px;
-        object-fit: cover;
-        object-position: center;
+      .item:hover {
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
       }
-      
-      .club-info {
-        padding: 24px;
+      img {
+        width: 100px;
+        float: left;
+        margin-right: 10px;
       }
-      
-      .club-info > h2 {
-        font-weight: lighter;
+      tr > :first-child {
+        font-style: italic;
+        padding-right: 0.25em;
       }
-      
-      .club-info > p {
-        margin-top: 10px;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        display: -webkit-box;
-        -webkit-box-orient: vertical;
-        -webkit-line-clamp: 10; 
+      td {
+        line-height: 1.25em;
       }
       </style>
 
-      <img class="fan-art-club" src="${this._club.avatar_url}" alt="Fan Art">
-      <div class="club-info">
-      <h2>${this._club.login}</h2>
-      <p>${this._club.url}</p>
-      </div>`;
+      <div class="item">
+        <img
+          src=""
+          alt="user avatar"
+        />
+        <table>
+          <tr>
+            <td>login:</td>
+            <td>
+              <a target="_blank" href="https://github.com/oets-man">${this._club.login}</a>
+            </td>
+          </tr>
+          <tr>
+            <td>nama:</td>
+            <td>usman</td>
+          </tr>
+          <tr>
+            <td>email:</td>
+            <td>oets@ma.com</td>
+          </tr>
+          <tr>
+            <td>lokasi:</td>
+            <td>Bangkalan</td>
+          </tr>
+        </table>
+      </div>
+      `;
   }
 }
 customElements.define("club-item", ClubItem);

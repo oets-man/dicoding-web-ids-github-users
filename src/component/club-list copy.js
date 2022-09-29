@@ -13,14 +13,15 @@ class ClubList extends HTMLElement {
   render() {
     this.shadow.innerHTML = `
       <style>
-      * {
-          box-sizing: border-boxs;
-          margin: 0;
-          padding: 0;
-        }
-      </style>
-    `;
-
+      .placeholder {
+        font-weight: lighter;
+        color: rgba(0, 0, 0, 0.5);
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+      </style>`;
     this._clubs.forEach((club) => {
       const clubItemElement = document.createElement("club-item");
       clubItemElement.club = club;
