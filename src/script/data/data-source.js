@@ -16,13 +16,16 @@ class DataSource_off {
 }
 class DataSource {
   static searchClub = (keyword) => {
-    return fetch(`https://sports-api.dicoding.dev/teams/search?t=${keyword}`)
+    return fetch(`https://api.github.com/search/users?q=${keyword}`)
       .then((response) => {
+        // console.log(response.json());
         return response.json();
       })
       .then((responseJSON) => {
-        if (responseJSON.teams) {
-          return Promise.resolve(responseJSON.teams);
+        // console.log(responseJSON);
+        if (responseJSON.total_count > 0) {
+          console.log(responseJSON.items);
+          return Promise.resolve(responseJSON.items);
         } else {
           return Promise.reject(`${keyword} tidak ditemukan!`);
         }
