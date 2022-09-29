@@ -77,7 +77,7 @@ class SearchBar extends HTMLElement {
           id="searchElement"
           type="search"
         />
-        <button id="searchButtonElement" type="submit">Search</button>
+        <button id="searchButtonElement" type="submit" class="btn btn-primary">Search</button>
       </div>`;
 
     this.shadow
