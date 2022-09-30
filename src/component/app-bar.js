@@ -1,4 +1,4 @@
-import updateTime from "./clock.js";
+import moment from "moment";
 class AppBar extends HTMLElement {
   constructor() {
     super();
@@ -44,22 +44,40 @@ class AppBar extends HTMLElement {
       flex-direction: column;
       text-align:end;
     }
-  
+
     .clock .time {
       font-size: 1em;
     }
-  
+
     .clock .date {
       font-size: 1em;
-    } 
+    }
   </style>
     <h2>Cari User GitHub</h2>
     <div class="clock">
-      <span class="time">dummy</span>
-      <span class="date">dummy</span>
+      <span class="time"></span>
+      <span class="date"></span>
     </div>
     `;
-    updateTime();
   }
 }
 customElements.define("app-bar", AppBar);
+
+(function () {
+  let component = document.querySelector("app-bar");
+
+  const displayTime = () => {
+    moment.locale("id");
+    let time = component.shadow.querySelector(".time");
+    let date = component.shadow.querySelector(".date");
+
+    time.innerHTML = moment().format("hh:mm:ss (A)");
+    date.innerHTML = moment().format("dddd, LL");
+  };
+
+  const updateTime = () => {
+    displayTime();
+    setTimeout(updateTime, 1000);
+  };
+  updateTime();
+})();
