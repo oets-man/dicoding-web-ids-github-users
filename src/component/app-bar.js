@@ -1,20 +1,20 @@
 import moment from "moment";
 class AppBar extends HTMLElement {
-  constructor() {
-    super();
-    this.shadow = this.attachShadow({ mode: "open" });
-  }
-  connectedCallback() {
-    this.render();
-  }
+	constructor() {
+		super();
+		this.shadow = this.attachShadow({ mode: "open" });
+	}
+	connectedCallback() {
+		this.render();
+	}
 
-  // Selector :host merupakan selector yang digunakan
-  // untuk menunjuk element :host (app-bar) yang menerapkan Shadow DOM.
-  // Pada host kita tidak dapat mengatur padding
-  // sehingga kita perlu memindahkannya pada elemen <h2>.
+	// Selector :host merupakan selector yang digunakan
+	// untuk menunjuk element :host (app-bar) yang menerapkan Shadow DOM.
+	// Pada host kita tidak dapat mengatur padding
+	// sehingga kita perlu memindahkannya pada elemen <h2>.
 
-  render() {
-    this.shadow.innerHTML = `
+	render() {
+		this.shadow.innerHTML = `
     <style>
     * {
       margin: 0;
@@ -59,25 +59,25 @@ class AppBar extends HTMLElement {
       <span class="date"></span>
     </div>
     `;
-  }
+	}
 }
 customElements.define("app-bar", AppBar);
 
 (function () {
-  let component = document.querySelector("app-bar");
+	let component = document.querySelector("app-bar");
 
-  const displayTime = () => {
-    moment.locale("id");
-    let time = component.shadow.querySelector(".time");
-    let date = component.shadow.querySelector(".date");
+	const displayTime = () => {
+		moment.locale("id");
+		let time = component.shadow.querySelector(".time");
+		let date = component.shadow.querySelector(".date");
 
-    time.innerHTML = moment().format("hh:mm:ss (A)");
-    date.innerHTML = moment().format("dddd, LL");
-  };
+		time.innerHTML = moment().format("hh:mm:ss (A)");
+		date.innerHTML = moment().format("dddd, LL");
+	};
 
-  const updateTime = () => {
-    displayTime();
-    setTimeout(updateTime, 1000);
-  };
-  updateTime();
+	const updateTime = () => {
+		displayTime();
+		setTimeout(updateTime, 1000);
+	};
+	updateTime();
 })();

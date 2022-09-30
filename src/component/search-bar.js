@@ -1,14 +1,14 @@
 class SearchBar extends HTMLElement {
-  constructor() {
-    super();
-    this.shadow = this.attachShadow({ mode: "open" });
-  }
-  connectedCallback() {
-    this.render();
-  }
+	constructor() {
+		super();
+		this.shadow = this.attachShadow({ mode: "open" });
+	}
+	connectedCallback() {
+		this.render();
+	}
 
-  render() {
-    this.shadow.innerHTML = `
+	render() {
+		this.shadow.innerHTML = `
         <style>
         .search-container {
           max-width: 800px;
@@ -80,19 +80,19 @@ class SearchBar extends HTMLElement {
         <button id="searchButtonElement" type="submit" class="btn btn-primary">Search</button>
       </div>`;
 
-    this.shadow
-      .querySelector("#searchButtonElement")
-      .addEventListener("click", this._clickEvent);
-  }
+		this.shadow
+			.querySelector("#searchButtonElement")
+			.addEventListener("click", this._clickEvent);
+	}
 
-  set clickEvent(event) {
-    this._clickEvent = event;
-    this.render();
-  }
+	set clickEvent(event) {
+		this._clickEvent = event;
+		this.render();
+	}
 
-  get value() {
-    return this.shadow.querySelector("#searchElement").value;
-  }
+	get value() {
+		return this.shadow.querySelector("#searchElement").value;
+	}
 }
 
 customElements.define("search-bar", SearchBar);

@@ -1,17 +1,17 @@
 class ClubItem extends HTMLElement {
-  constructor() {
-    super();
-    this.shadow = this.attachShadow({ mode: "open" });
-  }
-  set club(club) {
-    this._club = club;
-    this.render();
-  }
-  render() {
-    this.shadow.innerHTML = `
+	constructor() {
+		super();
+		this.shadow = this.attachShadow({ mode: "open" });
+	}
+	set club(club) {
+		this._club = club;
+		this.render();
+	}
+	render() {
+		this.shadow.innerHTML = `
       <style>
       * {
-        box-sizing: border-boxs;
+        box-sizing: border-box;
         margin: 0;
         padding: 0;
       }
@@ -74,6 +74,6 @@ class ClubItem extends HTMLElement {
         </table>
       </div>
       `;
-  }
+	}
 }
 customElements.define("club-item", ClubItem);
