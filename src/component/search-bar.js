@@ -72,13 +72,13 @@ class SearchBar extends HTMLElement {
         </style>
 
         <div id="search-container" class="search-container">
-        <input
-          placeholder="Cari berdasarkan username"
-          id="searchElement"
-          type="search"
-        />
-        <button id="searchButtonElement" type="submit" class="btn btn-primary">Search</button>
-      </div>`;
+          <input
+            placeholder="Cari GitHub User"
+            id="searchElement"
+            type="search"
+          />
+          <button id="searchButtonElement" type="submit" class="btn btn-primary">Cari</button>
+        </div>`;
 
 		this.shadow
 			.querySelector("#searchButtonElement")

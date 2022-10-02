@@ -44,6 +44,8 @@ class ClubItem extends HTMLElement {
       }
       td {
         line-height: 1.25em;
+        text-align: left;
+        vertical-align: top;
       }
       </style>
 
@@ -61,15 +63,19 @@ class ClubItem extends HTMLElement {
           </tr>
           <tr>
             <td>nama:</td>
-            <td>-</td>
+            <td>${this._club.name}</td>
           </tr>
           <tr>
             <td>email:</td>
-            <td>-</td>
+            <td>${this._club.email}</td>
           </tr>
           <tr>
             <td>lokasi:</td>
-            <td>-</td>
+            <td>${this._club.location}</td>
+          </tr>
+          <tr>
+            <td>lokasi:</td>
+            <td>${this._club.bio}</td>
           </tr>
         </table>
       </div>

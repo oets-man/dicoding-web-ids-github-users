@@ -6,14 +6,27 @@ class DataSource {
 				`https://api.github.com/search/users?q=${keyword}`
 			);
 			const responseJSON = await response.json();
-			if (responseJSON.total_count > 0) {
+			// console.log(responseJSON.items.length);
+			if (responseJSON.items.length > 0) {
 				const items = responseJSON.items;
-				return items;
+				return {
+					items: items,
+					count: responseJSON.items.length,
+					keyword: keyword,
+				};
 			} else {
-				return `${keyword} tidak ditemukan!`;
+				return {
+					items: false,
+					count: responseJSON.items.length,
+					keyword: keyword,
+				};
 			}
 		} catch (error) {
-			("Cek koneksi internet");
+			return {
+				error: true,
+				message: "Cek koneksi internet Anda!",
+				keyword: keyword,
+			};
 		}
 	};
 }

@@ -53,7 +53,7 @@ class AppBar extends HTMLElement {
       font-size: 1em;
     }
   </style>
-    <h2>Cari User GitHub</h2>
+    <h2>Pencarian User GitHub</h2>
     <div class="clock">
       <span class="time"></span>
       <span class="date"></span>
