@@ -74,7 +74,7 @@ class ClubItem extends HTMLElement {
             <td>${this._club.location}</td>
           </tr>
           <tr>
-            <td>lokasi:</td>
+            <td>Bio:</td>
             <td>${this._club.bio}</td>
           </tr>
         </table>

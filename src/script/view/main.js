@@ -1,4 +1,4 @@
-import { async } from "regenerator-runtime";
+// import { async } from "regenerator-runtime";
 import "../../component/club-list.js";
 import "../../component/search-bar.js";
 import DataSource from "../data/data-source.js";
@@ -43,6 +43,7 @@ const main = () => {
 		while (container.hasChildNodes()) {
 			container.removeChild(container.firstChild);
 		}
+
 		resultText();
 		const keyword = results.keyword;
 		keywordElement.innerHTML = `Hasil pencarian dari <q><strong>${keyword}</strong></q>`;
@@ -62,7 +63,7 @@ const main = () => {
 						Authorization: token.join(""),
 					},
 				});
-				const userJSON = await user.json();
+				let userJSON = await user.json();
 				const itemElement = document.createElement("club-item");
 				itemElement.club = userJSON;
 				container.appendChild(itemElement);

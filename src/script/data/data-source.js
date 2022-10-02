@@ -1,4 +1,4 @@
-import { async } from "regenerator-runtime";
+// import { async } from "regenerator-runtime";
 class DataSource {
 	static searchClub = async (keyword) => {
 		try {

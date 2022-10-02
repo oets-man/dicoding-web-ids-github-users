@@ -73,7 +73,7 @@ class SearchBar extends HTMLElement {
 
         <div id="search-container" class="search-container">
           <input
-            placeholder="Cari GitHub User"
+            placeholder="Cari GitHub User [login, nama, email, lokasi, bio]"
             id="searchElement"
             type="search"
           />
