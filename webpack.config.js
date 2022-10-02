@@ -31,7 +31,7 @@ module.exports = {
 		}),
 		new webpack.ContextReplacementPlugin(/moment[/\\]locale$/, /id/),
 		new FaviconsWebpackPlugin({
-			logo: "./src/logo.png",
+			logo: "./src/component/logo.png",
 			inject: true,
 			prefix: "assets/favicon/",
 		}),
