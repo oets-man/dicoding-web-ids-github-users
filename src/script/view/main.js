@@ -88,10 +88,10 @@ const main = () => {
 	};
 
 	let breakLoop = false;
-	const onButtonSearchClicked = async () => {
+	const onButtonSearchClicked = async (keyword) => {
 		breakLoop = true;
 		try {
-			const results = await DataSource.searchUser(searchElement.value);
+			const results = await DataSource.searchUser(keyword);
 			breakLoop = false;
 			renderResult(results);
 		} catch (fail) {
@@ -99,15 +99,8 @@ const main = () => {
 		}
 	};
 
-	searchElement.clickEvent = onButtonSearchClicked;
-	window.addEventListener("load", async () => {
-		try {
-			const results = await DataSource.searchUser(randomText(3));
-			renderResult(results);
-		} catch (fail) {
-			alert(fail);
-		}
-	});
+	searchElement.clickEvent = () => onButtonSearchClicked(searchElement.value);
+	window.addEventListener("load", onButtonSearchClicked(randomText(3)));
 };
 
 export default main;
