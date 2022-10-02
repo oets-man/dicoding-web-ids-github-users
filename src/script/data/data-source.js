@@ -1,12 +1,11 @@
 // import { async } from "regenerator-runtime";
 class DataSource {
-	static searchClub = async (keyword) => {
+	static searchUser = async (keyword) => {
 		try {
 			const response = await fetch(
 				`https://api.github.com/search/users?q=${keyword}`
 			);
 			const responseJSON = await response.json();
-			// console.log(responseJSON.items.length);
 			if (responseJSON.items.length > 0) {
 				const items = responseJSON.items;
 				return {
