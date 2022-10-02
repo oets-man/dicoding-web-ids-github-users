@@ -1,5 +1,5 @@
 // import { async } from "regenerator-runtime";
-import "../../component/club-list.js";
+import "../../component/my-card.js";
 import "../../component/search-bar.js";
 import DataSource from "../data/data-source.js";
 
@@ -7,7 +7,7 @@ const main = () => {
 	const searchElement = document.querySelector("search-bar");
 	const keywordElement = document.querySelector("#keyword");
 	const resultElement = document.querySelector("#result");
-	const container = document.querySelector(".container");
+	const container = document.querySelector("#container");
 
 	//dipecah-pecah supaya tidak diban oleh git
 	const token = [
@@ -64,8 +64,8 @@ const main = () => {
 					},
 				});
 				let userJSON = await user.json();
-				const itemElement = document.createElement("club-item");
-				itemElement.club = userJSON;
+				const itemElement = document.createElement("my-card");
+				itemElement.item = userJSON;
 				container.appendChild(itemElement);
 				resultText(i + 1);
 			}

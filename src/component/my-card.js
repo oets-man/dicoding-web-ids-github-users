@@ -1,10 +1,10 @@
-class ClubItem extends HTMLElement {
+class MyCard extends HTMLElement {
 	constructor() {
 		super();
 		this.shadow = this.attachShadow({ mode: "open" });
 	}
-	set club(club) {
-		this._club = club;
+	set item(item) {
+		this._item = item;
 		this.render();
 	}
 	render() {
@@ -51,35 +51,35 @@ class ClubItem extends HTMLElement {
 
       <div class="item">
         <img
-          src="${this._club.avatar_url}"
+          src="${this._item.avatar_url}"
           alt="user avatar"
         />
         <table>
           <tr>
             <td>login:</td>
             <td>
-              <a target="_blank" href="${this._club.html_url}">${this._club.login}</a>
+              <a target="_blank" href="${this._item.html_url}">${this._item.login}</a>
             </td>
           </tr>
           <tr>
             <td>nama:</td>
-            <td>${this._club.name}</td>
+            <td>${this._item.name}</td>
           </tr>
           <tr>
             <td>email:</td>
-            <td>${this._club.email}</td>
+            <td>${this._item.email}</td>
           </tr>
           <tr>
             <td>lokasi:</td>
-            <td>${this._club.location}</td>
+            <td>${this._item.location}</td>
           </tr>
           <tr>
             <td>Bio:</td>
-            <td>${this._club.bio}</td>
+            <td>${this._item.bio}</td>
           </tr>
         </table>
       </div>
       `;
 	}
 }
-customElements.define("club-item", ClubItem);
+customElements.define("my-card", MyCard);

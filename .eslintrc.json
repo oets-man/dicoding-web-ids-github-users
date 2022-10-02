@@ -3,6 +3,7 @@
         "browser": true,
         "es2021": true
     },
+    "ignorePatterns": ["/dist/*.js", "webpack.prod.js","webpack.dev.js", "webpack.config.js"],
     "extends": "eslint:recommended",
     "overrides": [
     ],
