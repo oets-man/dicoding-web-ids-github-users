@@ -23,7 +23,7 @@ class SearchBar extends HTMLElement {
 
         .search-container > input {
           width: 75%;
-          padding: 16px;
+          padding: 16px 8px;
           border: 0;
           border-bottom: 1px solid cornflowerblue;
           font-weight: bold;

@@ -8,11 +8,6 @@ class AppBar extends HTMLElement {
 		this.render();
 	}
 
-	// Selector :host merupakan selector yang digunakan
-	// untuk menunjuk element :host (app-bar) yang menerapkan Shadow DOM.
-	// Pada host kita tidak dapat mengatur padding
-	// sehingga kita perlu memindahkannya pada elemen <h2>.
-
 	render() {
 		this.shadow.innerHTML = `
     <style>

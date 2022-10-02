@@ -26,16 +26,14 @@ const main = () => {
 		resultElement.innerHTML = `Menampilkan <strong>${count}</strong> data`;
 	};
 
-	let breakLoop = false;
-	const onButtonSearchClicked = async () => {
-		breakLoop = true;
-		try {
-			const results = await DataSource.searchClub(searchElement.value);
-			breakLoop = false;
-			renderResult(results);
-		} catch (fail) {
-			alert(fail);
+	const randomText = (length) => {
+		let result = "";
+		const characters = "abcdefghijklmnopqrstuvwxyz";
+		const charactersLength = characters.length;
+		for (let i = 0; i < length; i++) {
+			result += characters.charAt(Math.floor(Math.random() * charactersLength));
 		}
+		return result;
 	};
 
 	const renderResult = async (results) => {
@@ -89,28 +87,27 @@ const main = () => {
 		});
 	};
 
-	searchElement.clickEvent = onButtonSearchClicked;
-
-	//auto jalan
-	window.addEventListener("load", async () => {
+	let breakLoop = false;
+	const onButtonSearchClicked = async () => {
+		breakLoop = true;
 		try {
-			const results = await DataSource.searchClub(randomText(3));
+			const results = await DataSource.searchUser(searchElement.value);
+			breakLoop = false;
 			renderResult(results);
 		} catch (fail) {
-			// console.log(fail);
+			alert(fail);
+		}
+	};
+
+	searchElement.clickEvent = onButtonSearchClicked;
+	window.addEventListener("load", async () => {
+		try {
+			const results = await DataSource.searchUser(randomText(3));
+			renderResult(results);
+		} catch (fail) {
 			alert(fail);
 		}
 	});
-
-	const randomText = (length) => {
-		let result = "";
-		const characters = "abcdefghijklmnopqrstuvwxyz";
-		const charactersLength = characters.length;
-		for (let i = 0; i < length; i++) {
-			result += characters.charAt(Math.floor(Math.random() * charactersLength));
-		}
-		return result;
-	};
 };
 
 export default main;
