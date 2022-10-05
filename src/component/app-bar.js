@@ -19,7 +19,7 @@ class AppBar extends HTMLElement {
     :host {
       display: block;
       width: 100%;
-      background-color: cornflowerblue;
+      background-color: #333333;
       color: white;
       box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
       overflow:auto;
@@ -34,7 +34,6 @@ class AppBar extends HTMLElement {
       width: fit-content;
       padding: 10px 10px 0 0;
       color: white;
-      font-family: sans-serif;
       display: flex;
       flex-direction: column;
       text-align:end;
@@ -46,6 +45,9 @@ class AppBar extends HTMLElement {
 
     .clock .date {
       font-size: 1em;
+    }
+    img{
+      width:50px;
     }
   </style>
     <h2>Pencarian User GitHub</h2>

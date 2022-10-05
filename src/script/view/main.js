@@ -37,7 +37,7 @@ const main = () => {
 	};
 
 	const renderResult = async (results) => {
-		//hapus dulu semua
+		//hapus dulu semua card
 		while (container.hasChildNodes()) {
 			container.removeChild(container.firstChild);
 		}
@@ -89,6 +89,9 @@ const main = () => {
 
 	let breakLoop = false;
 	const onButtonSearchClicked = async (keyword) => {
+		if (keyword.length < 3) {
+			return alert("Setidaknya masukkan 3 karakter!");
+		}
 		breakLoop = true;
 		try {
 			const results = await DataSource.searchUser(keyword);

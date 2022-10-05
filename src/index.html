@@ -3,9 +3,17 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<style>
+			main {
+				background-color: antiquewhite;
+			}
+			body {
+				overflow-x: hidden;
+			}
+		</style>
 		<title>Users GitHub</title>
 	</head>
-	<body style="overflow-x: hidden">
+	<body>
 		<header>
 			<app-bar></app-bar>
 		</header>
@@ -16,7 +24,7 @@
 					id="container-search"
 				>
 					<search-bar class="mx-auto"></search-bar>
-					<div class="message row text-center p-2 text-primary">
+					<div class="message row text-center p-2 text-black-50">
 						<p class="col-sm-12 col-lg-6 p-0 m-0" id="keyword"></p>
 						<p class="col-sm-12 col-lg-6 p-0 m-0" id="result"></p>
 					</div>
@@ -24,5 +32,8 @@
 			</div>
 			<div class="mx-auto my-2 p-2 text-center" id="container"></div>
 		</main>
+		<footer class="bg-gray-500">
+			<p class="text-center">by dara</p>
+		</footer>
 	</body>
 </html>

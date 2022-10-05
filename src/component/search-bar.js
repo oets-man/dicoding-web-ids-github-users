@@ -25,13 +25,13 @@ class SearchBar extends HTMLElement {
           width: 75%;
           padding: 16px 8px;
           border: 0;
-          border-bottom: 1px solid cornflowerblue;
+          border-bottom: 1px solid #333333;
           font-weight: bold;
         }
 
         .search-container > input:focus {
           outline: 0;
-          border-bottom: 2px solid cornflowerblue;
+          border-bottom: 2px solid #333333;
         }
 
         .search-container > input:focus::placeholder {
@@ -39,7 +39,7 @@ class SearchBar extends HTMLElement {
         }
 
         .search-container > input::placeholder {
-          color: cornflowerblue;
+          color: #706C61;
           font-weight: normal;
         }
 
@@ -48,7 +48,7 @@ class SearchBar extends HTMLElement {
           cursor: pointer;
           margin-left: auto;
           padding: 16px;
-          background-color: cornflowerblue;
+          background-color: #333333;
           color: white;
           border: 0;
           text-transform: uppercase;
@@ -78,7 +78,8 @@ class SearchBar extends HTMLElement {
             type="search"
           />
           <button id="searchButtonElement" type="submit" class="btn btn-primary">Cari</button>
-        </div>`;
+        </div>
+        `;
 
 		this.shadow
 			.querySelector("#searchButtonElement")

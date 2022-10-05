@@ -15,6 +15,7 @@ class MyCard extends HTMLElement {
         margin: 0;
         padding: 0;
       }
+      :host{vertical-align: top;}
       .item {
         text-align: left;
         background-color: azure;
