@@ -28,6 +28,7 @@
   "dependencies": {
     "bootstrap": "^5.2.1",
     "moment": "^2.29.4",
-    "regenerator-runtime": "^0.13.3"
+    "regenerator-runtime": "^0.13.3",
+    "sweetalert2": "^11.4.37"
   }
 }

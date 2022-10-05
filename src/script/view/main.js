@@ -1,4 +1,5 @@
-// import { async } from "regenerator-runtime";
+import Swal from "sweetalert2";
+
 import "../../component/my-card.js";
 import "../../component/search-bar.js";
 import DataSource from "../data/data-source.js";
@@ -90,7 +91,11 @@ const main = () => {
 	let breakLoop = false;
 	const onButtonSearchClicked = async (keyword) => {
 		if (keyword.length < 3) {
-			return alert("Setidaknya masukkan 3 karakter!");
+			return Swal.fire(
+				"Oops...",
+				"Setidaknya masukkan tiga karakter!",
+				"warning"
+			);
 		}
 		breakLoop = true;
 		try {
