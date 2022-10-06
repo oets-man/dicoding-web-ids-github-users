@@ -20,8 +20,10 @@ class MyCard extends HTMLElement {
         text-align: left;
         background-color: azure;
         width: 300px;
+        overflow-x: hidden;
+        overflow-y: auto;
+        max-height: 300px;
         margin: 10px 10px;
-        overflow: auto;
         padding: 10px;
         display: inline-block;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -48,6 +50,14 @@ class MyCard extends HTMLElement {
         text-align: left;
         vertical-align: top;
       }
+
+      @media screen and (max-width: 600px) {
+        .item {
+          width: 500px;
+          overflow: auto;
+        }
+      }
+
       </style>
 
       <div class="item">

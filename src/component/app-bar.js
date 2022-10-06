@@ -38,7 +38,7 @@ class AppBar extends HTMLElement {
       flex-direction: column;
       text-align:end;
     }
-
+   
     .clock .time {
       font-size: 1em;
     }
@@ -46,14 +46,31 @@ class AppBar extends HTMLElement {
     .clock .date {
       font-size: 1em;
     }
-    img{
-      width:50px;
+    .clock .delimiter {
+      display: none;
+    }
+    
+
+    @media screen and (max-width: 600px) {
+      h2{
+        float: none;
+        padding: 4px 0 0 16px;
+      }
+      .clock .delimiter {
+        display: inline;
+      }
+      .clock {
+        float: none;
+        display: inline-block;
+        padding: 0 0 8px 16px;
+      }
     }
   </style>
     <h2>Pencarian User GitHub</h2>
     <div class="clock">
-      <span class="time"></span>
       <span class="date"></span>
+      <span class="delimiter">|</span>
+      <span class="time"></span>
     </div>
     `;
 	}
@@ -68,8 +85,8 @@ customElements.define("app-bar", AppBar);
 		let time = component.shadow.querySelector(".time");
 		let date = component.shadow.querySelector(".date");
 
-		time.innerHTML = moment().format("hh:mm:ss (A)");
 		date.innerHTML = moment().format("dddd, LL");
+		time.innerHTML = moment().format("hh:mm:ss (A)");
 	};
 
 	const updateTime = () => {
