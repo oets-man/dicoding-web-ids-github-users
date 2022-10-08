@@ -1,7 +1,6 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const webpack = require("webpack");
-const FaviconsWebpackPlugin = require("favicons-webpack-plugin");
 
 module.exports = {
 	entry: "./src/index.js",
@@ -28,12 +27,8 @@ module.exports = {
 		new HtmlWebpackPlugin({
 			template: "./src/index.html",
 			filename: "index.html",
+			favicon: "./src/component/logo.png",
 		}),
 		new webpack.ContextReplacementPlugin(/moment[/\\]locale$/, /id/),
-		new FaviconsWebpackPlugin({
-			logo: "./src/component/logo.png",
-			inject: true,
-			prefix: "assets/favicon/",
-		}),
 	],
 };
