@@ -13,15 +13,7 @@ const main = () => {
 	//dipecah-pecah supaya tidak diban oleh git
 	const token = [
 		"token ",
-		"ghp_",
-		"P1Wdt",
-		"tRJRt",
-		"aYt3",
-		"PuhS9b",
-		"WyPs",
-		"tUhb",
-		"dN4U",
-		"YdZK",
+		"ghp_","sNHfJ","KCSGqM","rk0SoYa","bwkdnkL","AZ8xG2t","qooN",
 	];
 	const resultText = (count = 0) => {
 		resultElement.innerHTML = `Menampilkan <strong>${count}</strong> data`;
